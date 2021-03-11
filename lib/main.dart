@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'inputTujuan.dart';
 import 'inputAsal.dart';
+import 'result.dart';
+import 'periksa.dart';
+import 'riwayatPengecekan.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,6 +29,7 @@ class _MyAppState extends State<MyApp> {
   String _result = "";
 
   List<String> listViewItem = List<String>();
+  final periksaHandler = Function;
 
   void perhitunganOngkir() {
     setState(() {
@@ -140,6 +144,18 @@ class _MyAppState extends State<MyApp> {
                       margin: EdgeInsets.only(left: 10),
                       child: buildDropdownButton()),
                 ],
+              ),
+              Periksa(periksaHandler: perhitunganOngkir),
+              Result(result: _result),
+              Container(
+                margin: EdgeInsets.only(top: 10, bottom: 10),
+                child: Text(
+                  "Riwayat Pengecekan",
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
+              Expanded(
+                child: RiwayatPengecekan(listViewItem: listViewItem),
               ),
             ],
           ),
