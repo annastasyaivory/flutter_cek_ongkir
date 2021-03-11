@@ -129,6 +129,18 @@ class _MyAppState extends State<MyApp> {
                 ),
               ),
               InputTujuan(inputController2: inputController2),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text("Pilih Opsi Pengiriman",
+                      style: TextStyle(
+                        fontSize: 20,
+                      )),
+                  Container(
+                      margin: EdgeInsets.only(left: 10),
+                      child: buildDropdownButton()),
+                ],
+              ),
             ],
           ),
         ),
